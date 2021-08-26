@@ -26,17 +26,22 @@ function generatePassword() {
     console.log(upperWant);
 }
 //when asked for ch types to include in pass then you confirm wheter or not to include lower,upper,number,special chars
+// created var upperWant for uppercase letter prompt, made function to use conditional if else to come back true/false
 var upperWant;
 function chooseUpper() {
   upperWant = prompt("Do you want upper case letters?");
   if (upperWant === "no" || upperWant === "NO") {
       upperWant = "false";
       return upperWant;
-  }else(upperWant === "yes" || uperWant === "YES"); {
+  }else(upperWant === "yes" || upperWant === "YES"); {
       upperWant = "true";
       return upperWant;
     }
 }
+
+
+
+
 //when you answer each prompt then your input should be validated and at least one char type be seleceted
 //when all prompts are answered thena  password is generated that matches the selected criteria
 //when password is generated it should be displayed in alert or written to the page
