@@ -11,7 +11,7 @@ function chooseLength() {
   if (passwordLength < 8) {
       alert("Please make a valid selection!");
       chooseLength();
-  }else if (passwordLength > 128) {
+  }else(passwordLength > 128); {
       alert("Please make a valid selection!");
       chooseLength();
   }
@@ -19,11 +19,16 @@ function chooseLength() {
 }
 //When prompted for password criteria then you select which criteria to include in password
 //When prompted for the length of password then you choose betwee 8 and 128
+//Need to create function to put all inputs and make a password withfor loop and math.floor math.random
 function generatePassword() {
     chooseLength();
     console.log(passwordLength);
     chooseUpper();
     console.log(upperWant);
+    chooseNumbers();
+    console.log(numbersWant);
+    chooseSpecial();
+    console.log(specialWant);
 }
 //when asked for ch types to include in pass then you confirm wheter or not to include lower,upper,number,special chars
 // created var upperWant for uppercase letter prompt, made function to use conditional if else to come back true/false
@@ -37,6 +42,31 @@ function chooseUpper() {
       upperWant = "true";
       return upperWant;
     }
+}
+// created var numbersWant for the function chooseNumbers and added condition for no/NO to = false and yes/YES to = true and returns it.
+var numbersWant;
+function chooseNumbers(){
+  numbersWant = prompt("Do you want upper case letters?");
+  if (numbersWant === "no" || numbersWant === "NO") {
+      numbersWant = "false";
+      return numbersWant;
+  }else(numbersWant === "yes" || numbersWant === "YES");{
+    numbersWant = "true";
+    return numbersWant;
+  }
+}
+
+//created var/function for special characters used condition if else for true/false and returned it.
+var specialWant;
+function chooseSpecial() {
+  specialWant = prompt ("Do you want special characters?");
+  if (specialWant === "no" || specialWant === "NO" ) {
+    specialWant = "false";
+    return specialWant;
+  }else(specialWant === "yes" || specialWant === "YES");{
+    specialWant = "true";
+    return specialWant;
+  }
 }
 
 
