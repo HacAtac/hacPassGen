@@ -4,21 +4,23 @@ var numberVar = "0123456789";
 var specialVar = "`~!@#$%^&*()-_=+;";
 var upperVar = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var lowerVar = "abcdefghijklmnopqrstuvwxyz";
-var passwordLength = "";
+var usersChoices = "";
+
 //When I click the button it needs to prompt for password critera
+var passwordLength;
 function chooseLength() {
   passwordLength = prompt("How many characters? Choose between 8-128");
   if (passwordLength < 8) {
       alert("Please make a valid selection!");
       chooseLength();
-  }else(passwordLength > 128); {
+  }else if (passwordLength > 128) {
       alert("Please make a valid selection!");
       chooseLength();
   }
+
   return passwordLength;
 }
-//When prompted for password criteria then you select which criteria to include in password
-//When prompted for the length of password then you choose betwee 8 and 128
+
 //Need to create function to put all inputs and make a password withfor loop and math.floor math.random
 function generatePassword() {
     chooseLength();
@@ -29,52 +31,58 @@ function generatePassword() {
     console.log(numbersWant);
     chooseSpecial();
     console.log(specialWant);
+    
+    return forLoop();
+    
+
 }
-//when asked for ch types to include in pass then you confirm wheter or not to include lower,upper,number,special chars
+
 // created var upperWant for uppercase letter prompt, made function to use conditional if else to come back true/false
 var upperWant;
 function chooseUpper() {
-  upperWant = prompt("Do you want upper case letters?");
-  if (upperWant === "no" || upperWant === "NO") {
-      upperWant = "false";
-      return upperWant;
-  }else(upperWant === "yes" || upperWant === "YES"); {
-      upperWant = "true";
-      return upperWant;
-    }
-}
+  upperWant = confirm("Do you want upper case letters?");
+  if (upperWant === true) {
+    usersChoices = usersChoices + upperVar;
+  }
+  console.log(usersChoices);
+  }
 // created var numbersWant for the function chooseNumbers and added condition for no/NO to = false and yes/YES to = true and returns it.
 var numbersWant;
 function chooseNumbers(){
-  numbersWant = prompt("Do you want upper case letters?");
-  if (numbersWant === "no" || numbersWant === "NO") {
-      numbersWant = "false";
-      return numbersWant;
-  }else(numbersWant === "yes" || numbersWant === "YES");{
-    numbersWant = "true";
-    return numbersWant;
+  numbersWant = confirm("Do you want numbers?");
+  if (numbersWant === true) {
+    usersChoices = usersChoices + numberVar;
   }
+  console.log(usersChoices);
 }
 
 //created var/function for special characters used condition if else for true/false and returned it.
 var specialWant;
 function chooseSpecial() {
-  specialWant = prompt ("Do you want special characters?");
-  if (specialWant === "no" || specialWant === "NO" ) {
-    specialWant = "false";
-    return specialWant;
-  }else(specialWant === "yes" || specialWant === "YES");{
-    specialWant = "true";
-    return specialWant;
+  specialWant = confirm("Do you want special characters?");
+  if (specialWant === true) {
+    usersChoices = usersChoices + specialVar;
   }
+  console.log(usersChoices);
 }
-
-
-
 
 //when you answer each prompt then your input should be validated and at least one char type be seleceted
 //when all prompts are answered thena  password is generated that matches the selected criteria
 //when password is generated it should be displayed in alert or written to the page
+function forLoop() {
+      var pass = "";
+      for ( i=0; i<passwordLength; i++) {
+      //pick a random character based on master array
+      var num = Math.floor(Math.random()* usersChoices.length);
+      pass = pass + usersChoices.charAt(num)
+      console.log (pass);
+      console.log (num);
+      console.log(usersChoices.charAt(num));
+      }
+
+      return pass;
+
+}
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
