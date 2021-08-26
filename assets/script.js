@@ -1,4 +1,10 @@
 // Assignment code here
+// My global variables
+var numberVar = "0123456789";
+var specialVar = "`~!@#$%^&*()-_=+;";
+var upperChar = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+var lowerChar = "abcdefghijklmnopqrstuvwxyz";
+var passwordLength = "";
 //When I click the button it needs to prompt for password critera
 //When prompted for password criteria then you select which criteria to include in password
 //When prompted for the length of password then you choose betwee 8 and 128
