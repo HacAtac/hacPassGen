@@ -31,7 +31,9 @@ function generatePassword() {
     console.log(numbersWant);
     chooseSpecial();
     console.log(specialWant);
-    
+    chooseLower();
+    console.log(lowerWant);
+    // return the for loop into generatePassword function
     return forLoop();
     
 
@@ -46,7 +48,18 @@ function chooseUpper() {
   }
   console.log(usersChoices);
   }
-// created var numbersWant for the function chooseNumbers and added condition for no/NO to = false and yes/YES to = true and returns it.
+
+// created var lowerWant for lowercase letter prompt, made function to use conditional if else for true or false value
+var lowerWant;
+function chooseLower() {
+  lowerWant = confirm("Do you want lower case letters?");
+  if (lowerWant === true) {
+    usersChoices = usersChoices + lowerVar;
+  }
+  console.log(usersChoices);
+}
+
+  // created var numbersWant for the function chooseNumbers and added condition for no/NO to = false and yes/YES to = true and returns it.
 var numbersWant;
 function chooseNumbers(){
   numbersWant = confirm("Do you want numbers?");
