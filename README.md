@@ -1,6 +1,6 @@
 # hacPassGen
-<a href = "https://github.com/HacAtac" target="_blank">Link to my git hub.</a>
-link to deployed application: https://hacatac.github.io/hacPassGen/
+<a href = "https://github.com/HacAtac" target="_blank">Link to my git hub.</a></br>
+<a href = "https://hacatac.github.io/hacPassGen/" target="_blank"> Link to my deployed application!</a>
 
 
 User Story:
